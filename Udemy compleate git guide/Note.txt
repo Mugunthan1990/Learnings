@@ -1,0 +1,52 @@
+touch file.txt = creating  a file
+ls -la = list all file in directory
+mkdir =  Making now directory
+clear  =  clear cmd 
+start . or explorer  . = open current filder
+git init =  Initialize the git
+pwd = Current directory
+ls -l = list files which aare not hidden
+man [cmd] / [cmd] --help = To know about the cmd
+echo = Print line
+echo "wdef" > filename =  Add the line to a file
+echo "wdsadef" >> filename =  Append  the line to a file
+cat =  Read the file
+nano  =  edit the file ctl+o save the edit, ctl+X exit
+rm =  remove new file
+rm -rf folder name =  to delte the folder
+
+-Git Ojects Types -
+Blob - Stores file with extenstions - video, imge
+Tree -  info about direcories
+Commit -  Vertions of project
+Annotated Tag -  Pointer to Commit
+
+
+Blob, Tree =  We use command like git hash-object = to create blob object , git cat-file =  T read blob object, git maktree = Crate new tree object
+$ echo "hello, Git" | git hash-object --stdin
+$ echo 'hello, Git' | git hash-object --stdin -w  = create object in its database
+
+git hash-object <filename> -w = Create object from existing file
+
+Pytho zlib module to read compressed hash file
+
+
+echo -e "blob 11\0Hello, Git" | shasum
+echo -e "Hello, Git" | git hash-object --stdin
+
+
+echo -n "Hello, Git" | shasum =  will not add any line break at the end of text
+git cat-file -p <hash> = Content of the object
+git cat-file -s <hash> = Size of the object
+git cat-file -t <hash> = Type of the object
+
+git object permissions
+=----------------------
+040000 Directory
+100644 Reguler non excutable fle
+100664 Reguler non excutable group-writable file 
+100755 Reguler excutable file 
+120000 Symbolic link
+160000 Gitlink
+
+
